@@ -14,7 +14,7 @@ elasticsearch:
 logstash:
   container_name: logstash
   restart: always
-  image: accenture/adop-logstash:0.1.0
+  image: mylesnathan/adop-logstash:0.1.0
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     - "constraint:tier==public"
@@ -23,6 +23,8 @@ logstash:
     - "12201:12201/udp"
     - "25826:25826/udp"
     - "5000:5000/tcp"
+    - "51000:51000/tcp"
+    - "52000:52000/tcp"
 
 kibana:
   container_name: kibana

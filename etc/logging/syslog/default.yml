@@ -1,5 +1,29 @@
 # set LOGSTASH_HOST to dns/ip of logstash host
 
+gerrit-mysql:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "tcp://${LOGSTASH_HOST}:51000"
+    tag: "gerrit-mysql"
+
+gerrit:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "tcp://${LOGSTASH_HOST}:51000"
+    tag: "gerrit-mysql"
+
+jenkins:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "tcp://${LOGSTASH_HOST}:52000"
+    tag: "jenkins"
+
+jenkins-slave:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "tcp://${LOGSTASH_HOST}:52000"
+    tag: "jenkins-slave"
+
 proxy:
   log_driver: "syslog"
   log_opt:
